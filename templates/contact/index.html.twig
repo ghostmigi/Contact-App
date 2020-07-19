@@ -3,57 +3,76 @@
 {% block title %}Contact index{% endblock %}
 
 {% block body %}
+    <style>
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+        tr:hover {background-color: #ddd;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #ea8685;
+            color: white;
+        }
+    </style>
     <div class="container mt-5">
         <div class="row">
-        <h1>All Contact</h1>
+        <h1>All Contacts</h1>
         </div>
 
         <div class="row mt-4">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>Email</th>
-                    <th>PhoneNumber</th>
-                    <th>Company</th>
-                    <th>Office</th>
-                    <th>actions</th>
+                    <th style="text-align:center">Id</th>
+                    <th style="text-align:center">First Name</th>
+                    <th style="text-align:center">Last Name</th>
+                    <th style="text-align:center">Email</th>
+                    <th style="text-align:center">Phone Number</th>
+                    <th style="text-align:center">Company</th>
+                    <th style="text-align:center">Office</th>
+                    <th style="text-align:center">Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for contact in contacts %}
                 <tr>
-                    <td>{{ contact.id }}</td>
-                    <td>{{ contact.firstName }}</td>
-                    <td>{{ contact.lastName }}</td>
-                    <td>{{ contact.email }}</td>
-                    <td>{{ contact.phoneNumber }}</td>
-                    <td>{{ contact.company }}</td>
-                    <td>{{ contact.office }}</td>
-                    <td>
+                    <td style="text-align:center">{{ contact.id }}</td>
+                    <td style="text-align:center">{{ contact.firstName }}</td>
+                    <td style="text-align:center">{{ contact.lastName }}</td>
+                    <td style="text-align:center">{{ contact.email }}</td>
+                    <td style="text-align:center">{{ contact.phoneNumber }}</td>
+                    <td style="text-align:center">{{ contact.company }}</td>
+                    <td style="text-align:center">{{ contact.office }}</td>
+                    <td style="text-align:center">
                         <button class="btn btn-outline-primary">
-                            <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
+                            <a href="{{ path('contact_show', {'id': contact.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </button>
                         <button class="btn btn-outline-info">
-                            <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                            <a href="{{ path('contact_edit', {'id': contact.id}) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                         </button>
                         <button class="btn btn-outline-danger">
-                            <a href="{{ path('contact_delete', {'id': contact.id}) }}">Delete</a>
+                            <a href="{{ path('contact_delete', {'id': contact.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </button>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="8">no contacts found</td>
+                    <td colspan="8">No contacts found</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
 
         <div class="btn btn-outline-success">
-            <a href="{{ path('contact_new') }}">Create new</a>
+            <a href="{{ path('contact_new') }}"><i class="fa fa-plus" aria-hidden="true"></i></a>
         </div>
         </div>
 

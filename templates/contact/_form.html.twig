@@ -31,7 +31,11 @@
             {{ form_widget(form.office, {'attr': {'class': 'form-control', 'placeholder': 'ex: Enginner ...'} })}}
         </div>
 
-        <button class="btn btn-primary mt-2">{{ button_label|default('Save') }}</button>
+        <button class="btn btn-primary mt-2">
+            <i class="fa fa-floppy-o" aria-hidden="true">
+                {{ button_label|default('Save') }}
+            </i>
+        </button>
         {{ form_end(form) }}
         </div>
     </div>
