@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <h1>Contact</h1>
+        </div>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id :</th>
+                    <td>{{ contact.id }}</td>
+                </tr>
+                <tr>
+                    <th>FirstName :</th>
+                    <td>{{ contact.firstName }}</td>
+                </tr>
+                <tr>
+                    <th>LastName :</th>
+                    <td>{{ contact.lastName }}</td>
+                </tr>
+                <tr>
+                    <th>Email :</th>
+                    <td>{{ contact.email }}</td>
+                </tr>
+                <tr>
+                    <th>PhoneNumber :</th>
+                    <td>{{ contact.phoneNumber }}</td>
+                </tr>
+                <tr>
+                    <th>Company :</th>
+                    <td>{{ contact.company }}</td>
+                </tr>
+                <tr>
+                    <th>Office :</th>
+                    <td>{{ contact.office }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container">
+            <div class="row">
+                <button class="btn btn-outline-info">
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                </button>
+            </div>
+
+
+            <div class="row mt-2">
+                {{ include('contact/_delete_form.html.twig') }}
+
+                <button class="btn btn-outline-warning ml-2">
+                    <a href="{{ path('contact_index') }}">Back to list</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row mt-4">
+        <div class="form-group mr-3">
+            {{ form_label(form.firstName) }}
+            {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'Your first name ...'} })}}
+        </div>
+        <div class="form-group mr-3">
+            {{ form_label(form.lastName) }}
+            {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'Your last name ...'} })}}
+        </div>
+        <div class="form-group mr-3">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Email address ...'} })}}
+        </div>
+        <div class="form-group mr-3">
+            {{ form_label(form.phoneNumber) }}
+            {{ form_widget(form.phoneNumber, {'attr': {'class': 'form-control', 'placeholder': 'Phone Number ...'} })}}
+        </div>
+        <div class="form-group mr-3">
+            {{ form_label(form.company) }}
+            {{ form_widget(form.company, {'attr': {'class': 'form-control', 'placeholder': 'Company name ...'} })}}
+        </div>
+        <div class="form-group mr-3">
+            {{ form_label(form.office) }}
+            {{ form_widget(form.office, {'attr': {'class': 'form-control', 'placeholder': 'ex: Enginner ...'} })}}
+        </div>
+
+        <button class="btn btn-primary mt-2">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

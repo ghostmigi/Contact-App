@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact index{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+        <h1>All Contact</h1>
+        </div>
+
+        <div class="row mt-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>PhoneNumber</th>
+                    <th>Company</th>
+                    <th>Office</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.firstName }}</td>
+                    <td>{{ contact.lastName }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.phoneNumber }}</td>
+                    <td>{{ contact.company }}</td>
+                    <td>{{ contact.office }}</td>
+                    <td>
+                        <button class="btn btn-outline-primary">
+                            <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
+                        </button>
+                        <button class="btn btn-outline-info">
+                            <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <a href="{{ path('contact_delete', {'id': contact.id}) }}">Delete</a>
+                        </button>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no contacts found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="btn btn-outline-success">
+            <a href="{{ path('contact_new') }}">Create new</a>
+        </div>
+        </div>
+
+    </div>
+{% endblock %}
