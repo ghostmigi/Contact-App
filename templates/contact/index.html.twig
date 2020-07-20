@@ -34,16 +34,25 @@
                 </div>
             </a>
 
-            <form>
-                <div class="input-group mb-3 ml-4">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-dark">
-                            <span class="fa fa-search"></span>
-                        </button>
-                    </div>
+            <form class="pull-right hidden" role="search" id="nav-search-form" method="post" action="">
+                <div class="input-group ml-4">
+                    <input type="text" class="form-control" placeholder="Search" name ="search">
+                    <button type="submit" class="btn btn-dark">
+                        <span class="fa fa-search"></span>
+                    </button>
                 </div>
             </form>
+
+{#            <form>#}
+{#                <div class="input-group mb-3 ml-4">#}
+{#                        <input type="text" name="q" class="form-control" placeholder="Search...">#}
+{#                    <div class="input-group-append">#}
+{#                        <button type="submit" class="btn btn-dark">#}
+{#                            <span class="fa fa-search"></span>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </form>#}
 
 {#            <form class="form-inline ml-lg-4">#}
 {#                <input class="form-control mr-sm-2" type="text" placeholder="Search">#}
