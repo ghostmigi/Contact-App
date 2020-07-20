@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="07696900-666d-4a9e-81a5-ea24c1b89d98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contact/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contact/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/index.html.twig" afterDir="false" />
@@ -141,6 +140,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -154,7 +154,7 @@
       <updated>1595125757947</updated>
       <workItem from="1595125760253" duration="4342000" />
       <workItem from="1595162788646" duration="13085000" />
-      <workItem from="1595190394050" duration="7275000" />
+      <workItem from="1595190394050" duration="17835000" />
     </task>
     <servers />
   </component>
@@ -166,6 +166,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="640" y="296" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1595190303395" />
+    <state x="800" y="203" key="SettingsEditor" timestamp="1595206196562">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="800" y="203" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1595206196562" />
     <state x="1096" y="264" key="run.anything.popup" timestamp="1595126292183">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

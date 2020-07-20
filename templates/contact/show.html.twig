@@ -18,7 +18,7 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #ea8685;
+            background-color: #2ed573;
             color: white;
         }
     </style>
@@ -63,17 +63,19 @@
 
         <div class="container">
             <div class="row">
-                <button class="btn btn-outline-info">
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">
+                <a href="{{ path('contact_edit', {'id': contact.id}) }}">
+                <button class="btn btn-info">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </a>
                 </button>
+                </a>
             </div>
             <div class="row mt-2">
                 {{ include('contact/_delete_form.html.twig') }}
-                <button class="btn btn-outline-warning ml-2">
-                    <a href="{{ path('contact_index') }}"><i class="fa fa-hand-o-left" aria-hidden="true"></i></a>
+                <a href="{{ path('contact_index') }}">
+                <button class="btn btn-warning ml-2">
+                    <i class="fa fa-hand-o-left" aria-hidden="true"></i>
                 </button>
+                </a>
             </div>
         </div>
 
