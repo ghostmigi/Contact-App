@@ -2,12 +2,13 @@
 
 namespace App\Form;
 
-use App\Entity\Contact;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ContactType extends AbstractType
+class PasswordUpdateType extends AbstractType
 {
     /**
      * @param string $label
@@ -28,19 +29,16 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName')
-            ->add('lastName')
-            ->add('email')
-            ->add('phoneNumber')
-            ->add('company')
-            ->add('office')
+            ->add('oldPassword', PasswordType::class, $this->getConfiguration("Old password", "Enter your current password ..."))
+            ->add('newPassword', PasswordType::class, $this->getConfiguration("New password", "Type your new password ..."))
+            ->add('confirmPassword', PasswordType::class, $this->getConfiguration("Confirm password", "Confirm your new password ..."))
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Contact::class,
+            // Configure your form options here
         ]);
     }
 }

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page of {{ user.firstName }} {{ user.lastName }}{% endblock %}
+
+{% block body %}
+    <style>
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+        tr:hover {background-color: #ddd;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #2ed573;
+            color: white;
+        }
+    </style>
+
+    <div class="container mt-5">
+        <div class="row">
+            <h1>User informations</h1>
+        </div>
+
+        <div class="container col-6 mt-4">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th style="text-align:center">Id :</th>
+                    <td style="text-align:center">{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:center">First Name :</th>
+                    <td style="text-align:center">{{ user.firstName }}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:center">Last Name :</th>
+                    <td style="text-align:center">{{ user.lastName }}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:center">Email :</th>
+                    <td style="text-align:center">{{ user.email }}</td>
+                </tr>
+                </tbody>
+            </table>
+            {% if user is same as(app.user) %}
+                <div class="mt-3">
+                    <a href="{{ path('account_profile') }}" class="btn btn-primary">Modify my information</a>
+                    <a href="{{ path('account_password') }}" class="btn btn-primary">Modify my password</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

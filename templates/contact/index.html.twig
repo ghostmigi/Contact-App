@@ -4,7 +4,6 @@
 
 {% block body %}
     <style>
-
         td, th {
             border: 1px solid #ddd;
             padding: 8px;
@@ -24,6 +23,21 @@
     </style>
     <div class="container mt-5">
         <div class="row">
+            {% for label, flashes in app.session.flashbag.all %}
+                {% for flash in flashes %}
+                    {% if ( label == 'success' ) %}
+                        <div class="alert alert-success alert-dismissible fade show">
+                            {{ flash }}
+                        </div>
+                    {% elseif ( label == 'error' ) %}
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ flash }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="row">
             <h1>All Contacts</h1>
         </div>
 
@@ -34,14 +48,14 @@
                 </div>
             </a>
 
-            <form class="pull-right hidden" role="search" id="nav-search-form" method="post" action="">
-                <div class="input-group ml-4">
-                    <input type="text" class="form-control" placeholder="Search" name ="search">
-                    <button type="submit" class="btn btn-dark">
-                        <span class="fa fa-search"></span>
-                    </button>
-                </div>
-            </form>
+{#            <form class="pull-right hidden" role="search" id="nav-search-form" method="post" action="">#}
+{#                <div class="input-group ml-4">#}
+{#                    <input type="text" class="form-control" placeholder="Search" name ="search">#}
+{#                    <button type="submit" class="btn btn-dark">#}
+{#                        <span class="fa fa-search"></span>#}
+{#                    </button>#}
+{#                </div>#}
+{#            </form>#}
 
 {#            <form>#}
 {#                <div class="input-group mb-3 ml-4">#}
