@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +19,7 @@ class ContactController extends AbstractController
 {
     /**
      * @Route("/", name="contact_index", methods={"GET"})
+     * @Security("is_granted('ROLE_USER')")
      */
     public function index(ContactRepository $contactRepository): Response
     {
@@ -27,6 +30,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/new", name="contact_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_USER")
      * @param Request $request
      * @return Response
      */
@@ -54,6 +58,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/{id}", name="contact_show", methods={"GET"})
+     * @IsGranted("ROLE_USER")
      */
     public function show(Contact $contact): Response
     {
@@ -64,6 +69,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="contact_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_USER")
      */
     public function edit(Request $request, Contact $contact): Response
     {
@@ -84,6 +90,7 @@ class ContactController extends AbstractController
 
     /**
      * @Route("/{id}", name="contact_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_USER")
      */
     public function delete(Request $request, Contact $contact): Response
     {
