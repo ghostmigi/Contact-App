@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07696900-666d-4a9e-81a5-ea24c1b89d98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200725223359.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/RoleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,11 +140,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\xampp\htdocs\Contact\templates\contact" />
+      <recent name="Z:\xampp\htdocs\Contact\templates" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -165,7 +173,10 @@
       <workItem from="1595687197032" duration="3323000" />
       <workItem from="1595704921636" duration="10688000" />
       <workItem from="1595890578934" duration="618000" />
-      <workItem from="1596056294489" duration="1131000" />
+      <workItem from="1596056294489" duration="9520000" />
+      <workItem from="1596244571017" duration="2481000" />
+      <workItem from="1596283394046" duration="5152000" />
+      <workItem from="1596319661274" duration="3974000" />
     </task>
     <servers />
   </component>
@@ -192,10 +203,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="690" y="315" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1595706608751" />
-    <state x="800" y="203" key="SettingsEditor" timestamp="1595281750675">
+    <state x="800" y="203" key="SettingsEditor" timestamp="1596244596162">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="800" y="203" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1595281750675" />
+    <state x="800" y="203" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1596244596162" />
     <state x="1166" y="202" key="refactoring.ChangeSignatureDialog" timestamp="1595278513299">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -204,9 +215,9 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="1096" y="264" key="run.anything.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1595126292183" />
-    <state x="1103" y="270" width="672" height="678" key="search.everywhere.popup" timestamp="1596057019711">
+    <state x="1103" y="270" width="672" height="678" key="search.everywhere.popup" timestamp="1596320226875">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="1103" y="270" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1596057019711" />
+    <state x="1103" y="270" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1596320226875" />
   </component>
 </project>
