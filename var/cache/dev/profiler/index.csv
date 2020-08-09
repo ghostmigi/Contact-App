@@ -2448,3 +2448,7 @@ cb060d,::1,GET,http://localhost:8000/,1596323022,,200
 c53695,::1,GET,http://localhost:8000/login,1596897813,,200
 cf2f45,::1,POST,http://localhost:8000/login,1596897820,,302
 989bb5,::1,GET,http://localhost:8000/,1596897821,,200
+3e901b,::1,GET,http://localhost:8000/account,1596903467,,200
+8f40ef,::1,GET,http://localhost:8000/account,1596903468,,200
+35e3a9,::1,GET,http://localhost:8000/,1597004812,,302
+b58053,::1,GET,http://localhost:8000/login,1597004813,,200
