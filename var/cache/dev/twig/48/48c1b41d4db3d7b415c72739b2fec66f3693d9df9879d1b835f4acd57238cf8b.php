@@ -155,19 +155,38 @@ $context["label"], "error"))) {
             <h1>All Contacts</h1>
         </div>
 
-        <div class=\"row\">
-            <a href=\"";
-        // line 45
+        <div class=\"container align-items-end\">
+            <div class=\"row\">
+                <a href=\"";
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_new");
         echo "\">
-                <div class=\"btn btn-success\">
-                    <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
+                    <div class=\"btn btn-success mr-3\">
+                        <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
+                    </div>
+                </a>
+                <div class=\"row mr-1\">
+                    ";
+        // line 52
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 52, $this->source); })()), 'form_start');
+        echo "
+                    ";
+        // line 53
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 53, $this->source); })()), "searchFields", [], "any", false, false, false, 53), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Search ..."]]);
+        echo "
                 </div>
-            </a>
-            <form method=\"post\" class=\"d-inline-flex ml-3\">
-                <input type=\"text\" name=\"find\">
-                <input type=\"submit\" value=\"search\" class=\"btn btn-dark\">
-            </form>
+                    <button class=\"btn btn-primary\">
+                        ";
+        // line 56
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 56, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo "
+                        <i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>
+                    </button>
+                    ";
+        // line 59
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 59, $this->source); })()), 'form_end');
+        echo "
+            </div>
         </div>
 
         <div class=\"row mt-4\">
@@ -186,70 +205,70 @@ $context["label"], "error"))) {
                 </thead>
                 <tbody>
                 ";
-        // line 71
+        // line 78
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["contacts"]) || array_key_exists("contacts", $context) ? $context["contacts"] : (function () { throw new RuntimeError('Variable "contacts" does not exist.', 71, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["contacts"]) || array_key_exists("contacts", $context) ? $context["contacts"] : (function () { throw new RuntimeError('Variable "contacts" does not exist.', 78, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
-            // line 72
+            // line 79
             echo "                    <tr>
                         <td style=\"text-align:center\">";
-            // line 73
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 73), "html", null, true);
+            // line 80
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 80), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">";
-            // line 74
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "firstName", [], "any", false, false, false, 74), "html", null, true);
+            // line 81
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "firstName", [], "any", false, false, false, 81), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "lastName", [], "any", false, false, false, 75), "html", null, true);
+            // line 82
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "lastName", [], "any", false, false, false, 82), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">";
-            // line 76
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "email", [], "any", false, false, false, 76), "html", null, true);
+            // line 83
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "email", [], "any", false, false, false, 83), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">";
-            // line 77
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "phoneNumber", [], "any", false, false, false, 77), "html", null, true);
+            // line 84
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "phoneNumber", [], "any", false, false, false, 84), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">";
-            // line 78
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "company", [], "any", false, false, false, 78), "html", null, true);
+            // line 85
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "company", [], "any", false, false, false, 85), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">";
-            // line 79
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "office", [], "any", false, false, false, 79), "html", null, true);
+            // line 86
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "office", [], "any", false, false, false, 86), "html", null, true);
             echo "</td>
                         <td style=\"text-align:center\">
 
                         <div class=\"container col-10\">
                              <div class=\"row\">
                                  <a href=\"";
-            // line 84
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_show", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 84)]), "html", null, true);
+            // line 91
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_show", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 91)]), "html", null, true);
             echo "\">
                                  <button class=\"btn btn-primary ml-2\">
                                          <i class=\"fa fa-eye\" aria-hidden=\"true\"></i>
                                  </button>
                                  </a>
                                  <a href=\"";
-            // line 89
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 89)]), "html", null, true);
+            // line 96
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 96)]), "html", null, true);
             echo "\">
                                  <button class=\"btn btn-info ml-2\">
                                          <i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>
                                  </button>
                                  </a>
                                  <form method=\"post\" action=\"";
-            // line 94
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 94)]), "html", null, true);
+            // line 101
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 101)]), "html", null, true);
             echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
                                      <button class=\"btn btn-danger ml-2\">
                                          <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                                          <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 97
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 97))), "html", null, true);
+            // line 104
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 104))), "html", null, true);
             echo "\">
                                          <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>
                                      </button>
@@ -263,7 +282,7 @@ $context["label"], "error"))) {
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 107
+            // line 114
             echo "                    <tr>
                         <td colspan=\"8\">No contacts found</td>
                     </tr>
@@ -272,7 +291,7 @@ $context["label"], "error"))) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contact'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 111
+        // line 118
         echo "                </tbody>
             </table>
 
@@ -301,7 +320,7 @@ $context["label"], "error"))) {
 
     public function getDebugInfo()
     {
-        return array (  276 => 111,  267 => 107,  252 => 97,  246 => 94,  238 => 89,  230 => 84,  222 => 79,  218 => 78,  214 => 77,  210 => 76,  206 => 75,  202 => 74,  198 => 73,  195 => 72,  190 => 71,  161 => 45,  153 => 39,  147 => 38,  141 => 37,  135 => 34,  132 => 33,  130 => 32,  125 => 30,  122 => 29,  119 => 28,  114 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  295 => 118,  286 => 114,  271 => 104,  265 => 101,  257 => 96,  249 => 91,  241 => 86,  237 => 85,  233 => 84,  229 => 83,  225 => 82,  221 => 81,  217 => 80,  214 => 79,  209 => 78,  187 => 59,  181 => 56,  175 => 53,  171 => 52,  162 => 46,  153 => 39,  147 => 38,  141 => 37,  135 => 34,  132 => 33,  130 => 32,  125 => 30,  122 => 29,  119 => 28,  114 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -349,16 +368,23 @@ $context["label"], "error"))) {
             <h1>All Contacts</h1>
         </div>
 
-        <div class=\"row\">
-            <a href=\"{{ path('contact_new') }}\">
-                <div class=\"btn btn-success\">
-                    <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
+        <div class=\"container align-items-end\">
+            <div class=\"row\">
+                <a href=\"{{ path('contact_new') }}\">
+                    <div class=\"btn btn-success mr-3\">
+                        <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
+                    </div>
+                </a>
+                <div class=\"row mr-1\">
+                    {{ form_start(searchForm) }}
+                    {{ form_widget(searchForm.searchFields, {'attr': {'class': 'form-control', 'placeholder': 'Search ...'} })}}
                 </div>
-            </a>
-            <form method=\"post\" class=\"d-inline-flex ml-3\">
-                <input type=\"text\" name=\"find\">
-                <input type=\"submit\" value=\"search\" class=\"btn btn-dark\">
-            </form>
+                    <button class=\"btn btn-primary\">
+                        {{ button_label|default('Save') }}
+                        <i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>
+                    </button>
+                    {{ form_end(searchForm) }}
+            </div>
         </div>
 
         <div class=\"row mt-4\">
@@ -424,6 +450,6 @@ $context["label"], "error"))) {
 
     </div>
 {% endblock %}
-", "contact/index.html.twig", "Z:\\xampp\\htdocs\\Contact\\templates\\contact\\index.html.twig");
+", "contact/index.html.twig", "C:\\xampp\\htdocs\\Contact-app\\templates\\contact\\index.html.twig");
     }
 }

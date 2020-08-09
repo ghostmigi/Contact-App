@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Form\SearchContactType;
 use App\Repository\ContactRepository;
 use phpDocumentor\Reflection\Types\This;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -19,13 +20,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/", name="contact_index", methods={"GET"})
+     * @Route("/", name="contact_index", methods={"GET", "POST"})
      * @Security("is_granted('ROLE_USER')")
      */
-    public function index(ContactRepository $contactRepository): Response
+    public function index(ContactRepository $contactRepository, Request $request): Response
     {
+        $searchForm = $this->createForm(SearchContactType::class);
+        $searchForm->handleRequest($request);
+        $result = $contactRepository->findAll();
+
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+            $qq = $request->request->get('search_contact')['searchFields'];
+            $result = $contactRepository->findByFistNameOrLastName($qq);
+        }
+
         return $this->render('contact/index.html.twig', [
-            'contacts' => $contactRepository->findAll()
+            'contacts' => $result,
+            'searchForm' => $searchForm->createView()
         ]);
     }
 
