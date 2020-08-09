@@ -145,6 +145,6 @@ class __TwigTemplate_32823aa4d8c154ab965d6dde16be3eea93b388d505e74e6fe0406e98ba2
         </button>
         {{ form_end(form) }}
     </div>
-{% endblock %}", "account/registration.html.twig", "Z:\\xampp\\htdocs\\Contact\\templates\\account\\registration.html.twig");
+{% endblock %}", "account/registration.html.twig", "C:\\xampp\\htdocs\\Contact-app\\templates\\account\\registration.html.twig");
     }
 }

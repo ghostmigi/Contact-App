@@ -371,6 +371,9 @@
     <service id="App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\SearchContactType" class="App\Form\SearchContactType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -802,6 +805,7 @@
         <argument>App\Form\ContactType</argument>
         <argument>App\Form\PasswordUpdateType</argument>
         <argument>App\Form\RegistrationType</argument>
+        <argument>App\Form\SearchContactType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1136,7 +1140,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.tfJZ5Ko"/>
+      <argument type="service" id=".service_locator.wDrUsR1"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4923,6 +4927,8 @@
     <service id=".abstract.instanceof.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchContactType" class="App\Form\SearchContactType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SearchContactType" class="App\Form\SearchContactType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PasswordUpdateRepository" class="App\Repository\PasswordUpdateRepository" autowire="true" abstract="true"/>
@@ -5269,13 +5275,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.tfJZ5Ko" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.wDrUsR1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AccountType" type="service" id="App\Form\AccountType"/>
         <argument key="App\Form\ContactType" type="service" id="App\Form\ContactType"/>
         <argument key="App\Form\PasswordUpdateType" type="service" id="App\Form\PasswordUpdateType"/>
         <argument key="App\Form\RegistrationType" type="service" id="App\Form\RegistrationType"/>
+        <argument key="App\Form\SearchContactType" type="service" id="App\Form\SearchContactType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>

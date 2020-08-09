@@ -19,6 +19,24 @@ class ContactRepository extends ServiceEntityRepository
         parent::__construct($registry, Contact::class);
     }
 
+    public function findByFistNameOrLastName($firstName = null)
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        if($firstName){
+            $qb
+                ->andWhere('c.firstName = :firstName')
+                ->setParameter('firstName', $firstName)
+                ->orWhere('c.lastName = :lastName')
+                ->setParameter('lastName', $firstName)
+            ;
+        }
+        return $qb
+                ->orderBy('c.id', 'ASC')
+                ->getQuery()
+                ->getResult();
+    }
+
     // /**
     //  * @return Contact[] Returns an array of Contact objects
     //  */

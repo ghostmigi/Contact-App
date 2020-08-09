@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /account/password.html.twig */
+/* account/password.html.twig */
 class __TwigTemplate_2a0e3940b1884582264308364bcfed2ccf0d9dc956369c6fc2d4945462f357f3 extends Template
 {
     private $source;
@@ -40,12 +40,12 @@ class __TwigTemplate_2a0e3940b1884582264308364bcfed2ccf0d9dc956369c6fc2d4945462f
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/account/password.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "account/password.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/account/password.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "account/password.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "/account/password.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "account/password.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -116,7 +116,7 @@ class __TwigTemplate_2a0e3940b1884582264308364bcfed2ccf0d9dc956369c6fc2d4945462f
 
     public function getTemplateName()
     {
-        return "/account/password.html.twig";
+        return "account/password.html.twig";
     }
 
     public function isTraitable()
@@ -147,6 +147,6 @@ class __TwigTemplate_2a0e3940b1884582264308364bcfed2ccf0d9dc956369c6fc2d4945462f
         {{ form_end(form) }}
 
     </div>
-{% endblock %}", "/account/password.html.twig", "Z:\\xampp\\htdocs\\Contact\\templates\\account\\password.html.twig");
+{% endblock %}", "account/password.html.twig", "C:\\xampp\\htdocs\\Contact-app\\templates\\account\\password.html.twig");
     }
 }

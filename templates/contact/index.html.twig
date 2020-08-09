@@ -41,16 +41,23 @@
             <h1>All Contacts</h1>
         </div>
 
-        <div class="row">
-            <a href="{{ path('contact_new') }}">
-                <div class="btn btn-success">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
+        <div class="container align-items-end">
+            <div class="row">
+                <a href="{{ path('contact_new') }}">
+                    <div class="btn btn-success mr-3">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="row mr-1">
+                    {{ form_start(searchForm) }}
+                    {{ form_widget(searchForm.searchFields, {'attr': {'class': 'form-control', 'placeholder': 'Search ...'} })}}
                 </div>
-            </a>
-            <form method="post" class="d-inline-flex ml-3">
-                <input type="text" name="find">
-                <input type="submit" value="search" class="btn btn-dark">
-            </form>
+                    <button class="btn btn-primary">
+                        {{ button_label|default('Save') }}
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    </button>
+                    {{ form_end(searchForm) }}
+            </div>
         </div>
 
         <div class="row mt-4">
