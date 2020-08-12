@@ -155,7 +155,7 @@ $context["label"], "error"))) {
             <h1>All Contacts</h1>
         </div>
 
-        <div class=\"container align-items-end\">
+        <div class=\"container\">
             <div class=\"row\">
                 <a href=\"";
         // line 46
@@ -165,7 +165,7 @@ $context["label"], "error"))) {
                         <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
                     </div>
                 </a>
-                <div class=\"row mr-1\">
+                <div class=\"row ml-0\">
                     ";
         // line 52
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 52, $this->source); })()), 'form_start');
@@ -175,14 +175,14 @@ $context["label"], "error"))) {
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 53, $this->source); })()), "searchFields", [], "any", false, false, false, 53), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Search ..."]]);
         echo "
                 </div>
-                    <button class=\"btn btn-primary\">
-                        ";
-        // line 56
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 56, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "
-                        <i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>
-                    </button>
+                <button class=\"btn btn-primary ml-3\">
                     ";
+        // line 56
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 56, $this->source); })()), "")) : ("")), "html", null, true);
+        echo "
+                    <i class=\"fa fa-search\" aria-hidden=\"true\"></i>
+                </button>
+                ";
         // line 59
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 59, $this->source); })()), 'form_end');
         echo "
@@ -368,22 +368,22 @@ $context["label"], "error"))) {
             <h1>All Contacts</h1>
         </div>
 
-        <div class=\"container align-items-end\">
+        <div class=\"container\">
             <div class=\"row\">
                 <a href=\"{{ path('contact_new') }}\">
                     <div class=\"btn btn-success mr-3\">
                         <i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
                     </div>
                 </a>
-                <div class=\"row mr-1\">
+                <div class=\"row ml-0\">
                     {{ form_start(searchForm) }}
                     {{ form_widget(searchForm.searchFields, {'attr': {'class': 'form-control', 'placeholder': 'Search ...'} })}}
                 </div>
-                    <button class=\"btn btn-primary\">
-                        {{ button_label|default('Save') }}
-                        <i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>
-                    </button>
-                    {{ form_end(searchForm) }}
+                <button class=\"btn btn-primary ml-3\">
+                    {{ button_label|default('') }}
+                    <i class=\"fa fa-search\" aria-hidden=\"true\"></i>
+                </button>
+                {{ form_end(searchForm) }}
             </div>
         </div>
 
