@@ -9,7 +9,7 @@ use App\Repository\ContactRepository;
 use phpDocumentor\Reflection\Types\This;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 ///**
 // * @Route("/contact")
 // */
-class ContactController extends AbstractController
+class ContactController extends Controller
 {
     /**
      * @Route("/", name="contact_index", methods={"GET", "POST"})
@@ -29,6 +29,17 @@ class ContactController extends AbstractController
         $searchForm->handleRequest($request);
         $result = $contactRepository->findAll();
 
+        // Paginate the results of the query
+        $appointments = $this->get('knp_paginator')->paginate(
+            // Doctrine Query, not results    
+            $result,
+                // Define the page parameter
+                $request->query->getInt('page', 1),
+                // Items per page
+                3
+            );
+            // dd($appointments);
+
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
             $qq = $request->request->get('search_contact')['searchFields'];
             $result = $contactRepository->findByFistNameOrLastName($qq);
@@ -36,7 +47,8 @@ class ContactController extends AbstractController
 
         return $this->render('contact/index.html.twig', [
             'contacts' => $result,
-            'searchForm' => $searchForm->createView()
+            'searchForm' => $searchForm->createView(),
+            'appointments'=> $appointments
         ]);
     }
 

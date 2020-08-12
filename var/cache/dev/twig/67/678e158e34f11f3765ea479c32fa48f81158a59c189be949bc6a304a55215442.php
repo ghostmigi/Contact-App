@@ -197,6 +197,6 @@ class __TwigTemplate_6292c9b2242abb65fc6174c95ec395a1035c5fdf741398cae6595cffa0a
         {% endif %}
     </div>
 {% endif %}
-", "@KnpPaginator/Pagination/sliding.html.twig", "Z:\\xampp\\htdocs\\Contact\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\sliding.html.twig");
+", "@KnpPaginator/Pagination/sliding.html.twig", "C:\\wamp64\\www\\Contact-app\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\sliding.html.twig");
     }
 }

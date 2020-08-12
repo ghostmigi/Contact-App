@@ -295,6 +295,14 @@ $context["label"], "error"))) {
         // line 119
         echo "                </tbody>
             </table>
+            
+            <div class=\"navigation\">
+                ";
+        // line 123
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 123, $this->source); })()));
+        echo "
+            </div>
+
         </div>
 
     </div>
@@ -319,7 +327,7 @@ $context["label"], "error"))) {
 
     public function getDebugInfo()
     {
-        return array (  296 => 119,  287 => 115,  272 => 105,  266 => 102,  258 => 97,  250 => 92,  242 => 87,  238 => 86,  234 => 85,  230 => 84,  226 => 83,  222 => 82,  218 => 81,  215 => 80,  210 => 79,  188 => 60,  182 => 57,  176 => 54,  172 => 53,  163 => 47,  154 => 40,  148 => 39,  142 => 38,  136 => 35,  133 => 34,  131 => 33,  126 => 31,  123 => 30,  120 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  302 => 123,  296 => 119,  287 => 115,  272 => 105,  266 => 102,  258 => 97,  250 => 92,  242 => 87,  238 => 86,  234 => 85,  230 => 84,  226 => 83,  222 => 82,  218 => 81,  215 => 80,  210 => 79,  188 => 60,  182 => 57,  176 => 54,  172 => 53,  163 => 47,  154 => 40,  148 => 39,  142 => 38,  136 => 35,  133 => 34,  131 => 33,  126 => 31,  123 => 30,  120 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -444,10 +452,15 @@ $context["label"], "error"))) {
                 {% endfor %}
                 </tbody>
             </table>
+            
+            <div class=\"navigation\">
+                {{ knp_pagination_render(appointments) }}
+            </div>
+
         </div>
 
     </div>
 {% endblock %}
-", "contact/index.html.twig", "Z:\\xampp\\htdocs\\Contact\\templates\\contact\\index.html.twig");
+", "contact/index.html.twig", "C:\\wamp64\\www\\Contact-app\\templates\\contact\\index.html.twig");
     }
 }
