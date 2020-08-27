@@ -47,7 +47,7 @@ class ContactController extends Controller
             // Define the page parameter
             $request->query->getInt('page', 1),
             // Items per page
-            3
+            8
         );
 
         return $this->render('contact/index.html.twig', [
