@@ -92,107 +92,107 @@ class __TwigTemplate_8c031615c682858a26a4ad4a972e09f083d3a1d0d7b4b81c3ea9937889e
             background-color: #f19066;
         }
     </style>
-    <div class=\"container mt-5\">
-        <div class=\"row\">
-            <div class=\"col-md-3\">&nbsp;</div>
-                <div class=\"col-md-6 mt-5\">
-                    ";
+    <div class=\"container mt-5 w-50\">
+
+            <div>&nbsp;</div>
+            <div>
+                ";
         // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "session", [], "any", false, false, false, 17), "flashbag", [], "any", false, false, false, 17), "all", [], "any", false, false, false, 17));
         foreach ($context['_seq'] as $context["label"] => $context["flashes"]) {
             // line 18
-            echo "                        ";
+            echo "                    ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["flashes"]);
             foreach ($context['_seq'] as $context["_key"] => $context["flash"]) {
                 // line 19
-                echo "                            ";
+                echo "                        ";
                 if ((0 === twig_compare($context["label"], "success"))) {
                     // line 20
-                    echo "                                <div class=\"alert alert-success alert-dismissible fade show\">
-                                    ";
+                    echo "                            <div class=\"alert alert-success alert-dismissible fade show\">
+                                ";
                     // line 21
                     echo twig_escape_filter($this->env, $context["flash"], "html", null, true);
                     echo "
-                                </div>
-                            ";
+                            </div>
+                        ";
                 } elseif ((0 === twig_compare(                // line 23
 $context["label"], "error"))) {
                     // line 24
-                    echo "                                <div class=\"alert alert-danger alert-dismissible fade show\">
-                                    ";
+                    echo "                            <div class=\"alert alert-danger alert-dismissible fade show\">
+                                ";
                     // line 25
                     echo twig_escape_filter($this->env, $context["flash"], "html", null, true);
                     echo "
-                                </div>
-                            ";
+                            </div>
+                        ";
                 }
                 // line 28
-                echo "                        ";
+                echo "                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 29
-            echo "                    ";
+            echo "                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['label'], $context['flashes'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 30
-        echo "                    <div class=\"bg py-3 px-4 col-9\">
-                        <h1>Sign in !</h1>
+        echo "                <div class=\"bg py-3 px-4\">
+                    <h1>Sign in !</h1>
 
-                        ";
+                    ";
         // line 33
         if ((isset($context["hasError"]) || array_key_exists("hasError", $context) ? $context["hasError"] : (function () { throw new RuntimeError('Variable "hasError" does not exist.', 33, $this->source); })())) {
             // line 34
-            echo "                            <div class=\"alert alert-danger\">
-                                Email or password is invalid!
-                            </div>
-                        ";
+            echo "                        <div class=\"alert alert-danger\">
+                            Email or password is invalid!
+                        </div>
+                    ";
         }
         // line 38
         echo "
-                        <form action=\"";
+                    <form action=\"";
         // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_login");
         echo "\" method=\"post\">
-                            <div class=\"form-group\">
-                                <label for=\"email\">Email</label>
-                                <input
-                                        type=\"text\"
-                                        name=\"_username\"
-                                        id=\"email\"
-                                        class=\"form-control\"
-                                        placeholder=\"Address email ...\"
-                                        required
-                                        value=\"";
+                        <div class=\"form-group\">
+                            <label for=\"email\">Email</label>
+                            <input
+                                    type=\"text\"
+                                    name=\"_username\"
+                                    id=\"email\"
+                                    class=\"form-control\"
+                                    placeholder=\"Address email ...\"
+                                    required
+                                    value=\"";
         // line 49
         echo twig_escape_filter($this->env, (isset($context["username"]) || array_key_exists("username", $context) ? $context["username"] : (function () { throw new RuntimeError('Variable "username" does not exist.', 49, $this->source); })()), "html", null, true);
         echo "\"
-                                >
-                            </div>
-                            <div class=\"form-group\">
-                                <label for=\"password\">Password</label>
-                                <input
-                                        type=\"password\"
-                                        name=\"_password\"
-                                        id=\"password\"
-                                        placeholder=\"Password ...\"
-                                        class=\"form-control\"
-                                        required
-                                >
-                            </div>
-                            <div class=\"form-group\">
-                                <button type=\"submit\" class=\"btn btn-success\">Connection !</button>
-                            </div>
-                        </form>
-                    </div>
+                            >
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"password\">Password</label>
+                            <input
+                                    type=\"password\"
+                                    name=\"_password\"
+                                    id=\"password\"
+                                    placeholder=\"Password ...\"
+                                    class=\"form-control\"
+                                    required
+                            >
+                        </div>
+                        <div class=\"form-group\">
+                            <button type=\"submit\" class=\"btn btn-success\">Connection !</button>
+                        </div>
+                    </form>
                 </div>
-        </div>
+            </div>
     </div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -231,64 +231,64 @@ $context["label"], "error"))) {
             background-color: #f19066;
         }
     </style>
-    <div class=\"container mt-5\">
-        <div class=\"row\">
-            <div class=\"col-md-3\">&nbsp;</div>
-                <div class=\"col-md-6 mt-5\">
-                    {% for label, flashes in app.session.flashbag.all %}
-                        {% for flash in flashes %}
-                            {% if ( label == 'success' ) %}
-                                <div class=\"alert alert-success alert-dismissible fade show\">
-                                    {{ flash }}
-                                </div>
-                            {% elseif ( label == 'error' ) %}
-                                <div class=\"alert alert-danger alert-dismissible fade show\">
-                                    {{ flash }}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                    <div class=\"bg py-3 px-4 col-9\">
-                        <h1>Sign in !</h1>
+    <div class=\"container mt-5 w-50\">
 
-                        {% if hasError %}
-                            <div class=\"alert alert-danger\">
-                                Email or password is invalid!
+            <div>&nbsp;</div>
+            <div>
+                {% for label, flashes in app.session.flashbag.all %}
+                    {% for flash in flashes %}
+                        {% if ( label == 'success' ) %}
+                            <div class=\"alert alert-success alert-dismissible fade show\">
+                                {{ flash }}
+                            </div>
+                        {% elseif ( label == 'error' ) %}
+                            <div class=\"alert alert-danger alert-dismissible fade show\">
+                                {{ flash }}
                             </div>
                         {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                <div class=\"bg py-3 px-4\">
+                    <h1>Sign in !</h1>
 
-                        <form action=\"{{ path('account_login') }}\" method=\"post\">
-                            <div class=\"form-group\">
-                                <label for=\"email\">Email</label>
-                                <input
-                                        type=\"text\"
-                                        name=\"_username\"
-                                        id=\"email\"
-                                        class=\"form-control\"
-                                        placeholder=\"Address email ...\"
-                                        required
-                                        value=\"{{ username }}\"
-                                >
-                            </div>
-                            <div class=\"form-group\">
-                                <label for=\"password\">Password</label>
-                                <input
-                                        type=\"password\"
-                                        name=\"_password\"
-                                        id=\"password\"
-                                        placeholder=\"Password ...\"
-                                        class=\"form-control\"
-                                        required
-                                >
-                            </div>
-                            <div class=\"form-group\">
-                                <button type=\"submit\" class=\"btn btn-success\">Connection !</button>
-                            </div>
-                        </form>
-                    </div>
+                    {% if hasError %}
+                        <div class=\"alert alert-danger\">
+                            Email or password is invalid!
+                        </div>
+                    {% endif %}
+
+                    <form action=\"{{ path('account_login') }}\" method=\"post\">
+                        <div class=\"form-group\">
+                            <label for=\"email\">Email</label>
+                            <input
+                                    type=\"text\"
+                                    name=\"_username\"
+                                    id=\"email\"
+                                    class=\"form-control\"
+                                    placeholder=\"Address email ...\"
+                                    required
+                                    value=\"{{ username }}\"
+                            >
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"password\">Password</label>
+                            <input
+                                    type=\"password\"
+                                    name=\"_password\"
+                                    id=\"password\"
+                                    placeholder=\"Password ...\"
+                                    class=\"form-control\"
+                                    required
+                            >
+                        </div>
+                        <div class=\"form-group\">
+                            <button type=\"submit\" class=\"btn btn-success\">Connection !</button>
+                        </div>
+                    </form>
                 </div>
-        </div>
+            </div>
     </div>
+
 {% endblock %}
 ", "account/login.html.twig", "C:\\wamp64\\www\\Contact-app\\templates\\account\\login.html.twig");
     }

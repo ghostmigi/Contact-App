@@ -10,62 +10,62 @@
             background-color: #f19066;
         }
     </style>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-3">&nbsp;</div>
-                <div class="col-md-6 mt-5">
-                    {% for label, flashes in app.session.flashbag.all %}
-                        {% for flash in flashes %}
-                            {% if ( label == 'success' ) %}
-                                <div class="alert alert-success alert-dismissible fade show">
-                                    {{ flash }}
-                                </div>
-                            {% elseif ( label == 'error' ) %}
-                                <div class="alert alert-danger alert-dismissible fade show">
-                                    {{ flash }}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                    <div class="bg py-3 px-4 col-9">
-                        <h1>Sign in !</h1>
+    <div class="container mt-5 w-50">
 
-                        {% if hasError %}
-                            <div class="alert alert-danger">
-                                Email or password is invalid!
+            <div>&nbsp;</div>
+            <div>
+                {% for label, flashes in app.session.flashbag.all %}
+                    {% for flash in flashes %}
+                        {% if ( label == 'success' ) %}
+                            <div class="alert alert-success alert-dismissible fade show">
+                                {{ flash }}
+                            </div>
+                        {% elseif ( label == 'error' ) %}
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                {{ flash }}
                             </div>
                         {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                <div class="bg py-3 px-4">
+                    <h1>Sign in !</h1>
 
-                        <form action="{{ path('account_login') }}" method="post">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input
-                                        type="text"
-                                        name="_username"
-                                        id="email"
-                                        class="form-control"
-                                        placeholder="Address email ..."
-                                        required
-                                        value="{{ username }}"
-                                >
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input
-                                        type="password"
-                                        name="_password"
-                                        id="password"
-                                        placeholder="Password ..."
-                                        class="form-control"
-                                        required
-                                >
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success">Connection !</button>
-                            </div>
-                        </form>
-                    </div>
+                    {% if hasError %}
+                        <div class="alert alert-danger">
+                            Email or password is invalid!
+                        </div>
+                    {% endif %}
+
+                    <form action="{{ path('account_login') }}" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                    type="text"
+                                    name="_username"
+                                    id="email"
+                                    class="form-control"
+                                    placeholder="Address email ..."
+                                    required
+                                    value="{{ username }}"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input
+                                    type="password"
+                                    name="_password"
+                                    id="password"
+                                    placeholder="Password ..."
+                                    class="form-control"
+                                    required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Connection !</button>
+                        </div>
+                    </form>
                 </div>
-        </div>
+            </div>
     </div>
+
 {% endblock %}

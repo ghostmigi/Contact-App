@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Form\SearchContactType;
 use App\Repository\ContactRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use phpDocumentor\Reflection\Types\This;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -19,36 +20,40 @@ use Symfony\Component\Routing\Annotation\Route;
 // */
 class ContactController extends Controller
 {
+
+
     /**
      * @Route("/", name="contact_index", methods={"GET", "POST"})
      * @Security("is_granted('ROLE_USER')")
+     * @param ContactRepository $contactRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
      */
-    public function index(ContactRepository $contactRepository, Request $request): Response
+    public function index(ContactRepository $contactRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $searchForm = $this->createForm(SearchContactType::class);
         $searchForm->handleRequest($request);
         $result = $contactRepository->findAll();
-
-        // Paginate the results of the query
-        $appointments = $this->get('knp_paginator')->paginate(
-            // Doctrine Query, not results    
-            $result,
-                // Define the page parameter
-                $request->query->getInt('page', 1),
-                // Items per page
-                3
-            );
-            // dd($appointments);
 
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
             $qq = $request->request->get('search_contact')['searchFields'];
             $result = $contactRepository->findByFistNameOrLastName($qq);
         }
 
+        $contacts = $paginator->paginate(
+        // Doctrine Query, not results
+            $result,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            3
+        );
+
         return $this->render('contact/index.html.twig', [
             'contacts' => $result,
-            'searchForm' => $searchForm->createView(),
-            'appointments'=> $appointments
+            'contacts' => $contacts,
+            'searchForm' => $searchForm->createView()
         ]);
     }
 

@@ -254,7 +254,7 @@
       </parameter>
     </parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
-    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
@@ -353,13 +353,6 @@
     </service>
     <service id="App\Controller\ContactController" class="App\Controller\ContactController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
-    </service>
-    <service id="App\Controller\PaginationController" class="App\Controller\PaginationController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\PaginationController"/>
-      </call>
     </service>
     <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -5044,7 +5037,7 @@
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
       <tag name="container.hot_path"/>
       <argument type="collection">
-        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
         <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
         <argument key="defaultPageRange">5</argument>
@@ -5064,9 +5057,6 @@
     <service id=".abstract.instanceof.App\Controller\AccountController" class="App\Controller\AccountController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PaginationController" class="App\Controller\PaginationController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PaginationController" class="App\Controller\PaginationController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\PaginationController" class="App\Controller\PaginationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5328,10 +5318,11 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.ZRvo6SM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.fglYq7m" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="contactRepository" type="service" id="App\Repository\ContactRepository"/>
+        <argument key="paginator" type="service" id="knp_paginator"/>
       </argument>
     </service>
     <service id=".service_locator.OnDAkJ5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5340,19 +5331,13 @@
         <argument key="contact" type="service" id=".errored..service_locator.OnDAkJ5.App\Entity\Contact"/>
       </argument>
     </service>
-    <service id=".service_locator.n8gOTNr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="paginator" type="service" id="knp_paginator"/>
-      </argument>
-    </service>
     <service id=".service_locator.tIQ5Q0N" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="user" type="service" id=".errored..service_locator.tIQ5Q0N.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.aUP3JD1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6ykk7P." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountController::login" type="service" id=".service_locator.Z9YHLOP"/>
@@ -5361,9 +5346,8 @@
         <argument key="App\Controller\AccountController::updatePassword" type="service" id=".service_locator.0ca1fUt"/>
         <argument key="App\Controller\ContactController::delete" type="service" id=".service_locator.OnDAkJ5"/>
         <argument key="App\Controller\ContactController::edit" type="service" id=".service_locator.OnDAkJ5"/>
-        <argument key="App\Controller\ContactController::index" type="service" id=".service_locator.ZRvo6SM"/>
+        <argument key="App\Controller\ContactController::index" type="service" id=".service_locator.fglYq7m"/>
         <argument key="App\Controller\ContactController::show" type="service" id=".service_locator.OnDAkJ5"/>
-        <argument key="App\Controller\PaginationController::index" type="service" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\UserController::index" type="service" id=".service_locator.tIQ5Q0N"/>
         <argument key="App\Controller\AccountController:login" type="service" id=".service_locator.Z9YHLOP"/>
         <argument key="App\Controller\AccountController:profile" type="service" id=".service_locator.s.tJs.w"/>
@@ -5371,9 +5355,8 @@
         <argument key="App\Controller\AccountController:updatePassword" type="service" id=".service_locator.0ca1fUt"/>
         <argument key="App\Controller\ContactController:delete" type="service" id=".service_locator.OnDAkJ5"/>
         <argument key="App\Controller\ContactController:edit" type="service" id=".service_locator.OnDAkJ5"/>
-        <argument key="App\Controller\ContactController:index" type="service" id=".service_locator.ZRvo6SM"/>
+        <argument key="App\Controller\ContactController:index" type="service" id=".service_locator.fglYq7m"/>
         <argument key="App\Controller\ContactController:show" type="service" id=".service_locator.OnDAkJ5"/>
-        <argument key="App\Controller\PaginationController:index" type="service" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\UserController:index" type="service" id=".service_locator.tIQ5Q0N"/>
       </argument>
     </service>
@@ -5672,12 +5655,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\PaginationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\PaginationController"/>
-      <argument>App\Controller\PaginationController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.vdmMuyE" method="withContext"/>
-    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\UserController"/>
       <argument>App\Controller\UserController</argument>
@@ -5827,12 +5804,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.aUP3JD1"/>
+      <argument type="service" id=".service_locator.6ykk7P."/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.aUP3JD1"/>
+      <argument type="service" id=".service_locator.6ykk7P."/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6224,7 +6201,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.aUP3JD1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.6ykk7P."/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

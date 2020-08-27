@@ -299,7 +299,7 @@ $context["label"], "error"))) {
             <div class=\"navigation\">
                 ";
         // line 123
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["appointments"]) || array_key_exists("appointments", $context) ? $context["appointments"] : (function () { throw new RuntimeError('Variable "appointments" does not exist.', 123, $this->source); })()));
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["contacts"]) || array_key_exists("contacts", $context) ? $context["contacts"] : (function () { throw new RuntimeError('Variable "contacts" does not exist.', 123, $this->source); })()));
         echo "
             </div>
 
@@ -454,7 +454,7 @@ $context["label"], "error"))) {
             </table>
             
             <div class=\"navigation\">
-                {{ knp_pagination_render(appointments) }}
+                {{ knp_pagination_render(contacts) }}
             </div>
 
         </div>
